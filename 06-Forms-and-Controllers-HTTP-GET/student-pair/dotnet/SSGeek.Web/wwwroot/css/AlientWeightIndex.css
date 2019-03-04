@@ -1,0 +1,18 @@
+﻿.page-title {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.input-form {
+    padding: 0 10px;
+    display: grid;
+}
+
+.submit-btn {
+    margin-left: 202px;
+}
+
+.earth-weight-input {
+    width: 300px;
+}

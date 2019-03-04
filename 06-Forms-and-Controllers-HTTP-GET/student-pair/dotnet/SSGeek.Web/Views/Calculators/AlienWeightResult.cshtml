@@ -4,10 +4,15 @@
     ViewData["Title"] = "Alien Weight Result";
 }
 
+@section StyleSheet {
+    <link rel="stylesheet" type="text/css" href="~/css/AlienWeightResult.css" />
+}
+
 
 <section id="calculatorResult" class="centeredPanel">
-    <p>Earth Weight: @Model.EarthWeight</p>
-    <p>Selected Planet: @Model.SelectedPlanet</p>
-    <p>Weight on Planet: @AlienWeightModel.CalcAlienWeight(Model.SelectedPlanet, Model.EarthWeight)</p>
+    <div class="results-sect">
+        <img src="~/images/@(Model.SelectedPlanet.ToLower()).jpg" />
+        <p>If you are @Model.EarthWeight Ibs on planet Earth, you would weigh @AlienWeightModel.CalcAlienWeight(Model.SelectedPlanet, Model.EarthWeight).ToString("0.00") Ibs on @(Model.SelectedPlanet).</p>
+    </div>
 
 </section>

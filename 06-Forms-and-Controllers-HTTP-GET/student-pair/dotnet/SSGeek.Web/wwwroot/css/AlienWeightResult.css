@@ -1,0 +1,20 @@
+﻿.results-sect {
+    padding: 5px 0 0 5px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 85%;
+    flex-wrap: nowrap;
+}
+
+.results-sect img {
+    width: 200px;
+    border-radius: 5%;
+}
+
+.results-sect p {
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-left: 20px;
+}
