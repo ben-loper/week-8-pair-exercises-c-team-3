@@ -1,4 +1,4 @@
-﻿
+﻿@model AlienWeightModel
 
 @{
     ViewData["Title"] = "Alien Weight Result";
@@ -6,6 +6,8 @@
 
 
 <section id="calculatorResult" class="centeredPanel">
-
+    <p>Earth Weight: @Model.EarthWeight</p>
+    <p>Selected Planet: @Model.SelectedPlanet</p>
+    <p>Weight on Planet: @AlienWeightModel.CalcAlienWeight(Model.SelectedPlanet, Model.EarthWeight)</p>
 
 </section>
