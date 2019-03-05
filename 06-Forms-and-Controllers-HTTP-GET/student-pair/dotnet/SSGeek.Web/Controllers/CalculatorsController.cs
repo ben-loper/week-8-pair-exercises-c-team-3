@@ -29,26 +29,26 @@ namespace SSGeek.Web.Controllers
             return View(model);
         }
 
-        
-
-        private List<SelectListItem> planets = new List<SelectListItem>()
+        public ActionResult AlienAge()
         {
-            new SelectListItem() { Text = "Mercury" },
-            new SelectListItem() { Text = "Venus" },
-            new SelectListItem() { Text = "Mars" },
-            new SelectListItem() { Text = "Jupiter" },
-            new SelectListItem() { Text = "Saturn" },
-            new SelectListItem() { Text = "Neptune" },
-            new SelectListItem() { Text = "Uranus" }
-        };
+            return View();
+        }
 
-        private List<SelectListItem> transportationModes = new List<SelectListItem>()
+        // GET: calcualtors/alienweightresult?planet=xyz&weight=123
+        public ActionResult AlienAgeResult(AlienAgeModel model)
         {
-            new SelectListItem() { Text = "Walking", Value="walking" },
-            new SelectListItem() { Text = "Car", Value = "car" },
-            new SelectListItem() { Text = "Bullet Train", Value = "bullet train" },
-            new SelectListItem() { Text = "Boeing 747", Value = "boeing 747" },
-            new SelectListItem() { Text = "Concorde", Value = "concorde" }
-        };
+            return View(model);
+        }
+
+        public ActionResult AlienTravel()
+        {
+            return View();
+        }
+
+        // GET: calcualtors/alienweightresult?planet=xyz&weight=123
+        public ActionResult AlienTravelResult(AlienTravelModel model)
+        {
+            return View(model);
+        }
     }
 }

@@ -32,7 +32,6 @@ namespace SSGeek.Web.Models
 
         public static List<SelectListItem> Planets = new List<SelectListItem>()
         {
-            new SelectListItem() { Text = "Sun", Value = "Sun" },
             new SelectListItem() { Text = "Mercury", Value = "Mercury" },
             new SelectListItem() { Text = "Venus", Value = "Venus" },
             new SelectListItem() { Text = "Earth", Value = "Earth" },
