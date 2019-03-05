@@ -40,8 +40,6 @@ namespace SSGeek.Web.Controllers
         {
             _fpDAL.SaveNewPost(fp);
 
-            //return RedirectToAction("");
-
             return RedirectToAction("Index");
         }
     }

@@ -4,13 +4,19 @@
     ViewData["Title"] = "Index";
 }
 
+@section StyleSheet {
+    <link rel="stylesheet" type="text/css" href="~/css/ForumIndex.css" />
+}
+
 <section class="centeredPanel">
     <h2>Solar System Geek Forum</h2>
     <a asp-action="NewPost" asp-controller="Forum">Post a Message</a>
     <div class="post">
         @foreach (ForumPost post in Model)
         {
-            <p>@post.Message</p>
+            <p class="Subject">@post.Subject</p>
+            <p class="NameDate">by @post.Username on @post.PostDate.ToString("MM/dd/yyyy") at @post.PostDate.ToString("HH:mm:ss")</p>
+            <p class="Message">@post.Message</p>
         }
     </div>
 </section>

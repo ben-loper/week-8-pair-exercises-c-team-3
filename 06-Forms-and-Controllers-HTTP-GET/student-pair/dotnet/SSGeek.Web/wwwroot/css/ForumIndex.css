@@ -1,0 +1,27 @@
+﻿h2 {
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+a {
+    display:flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.Post {
+
+}
+
+.Subject {
+
+}
+
+.NameDate {
+
+}
+
+.Message {
+
+}
