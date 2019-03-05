@@ -19,7 +19,38 @@ namespace SSGeek.Web.DAL
 
         public List<ForumPost> GetAllPosts()
         {
-            throw new NotImplementedException();
+            
+                List<ForumPost> posts = new List<ForumPost>();
+
+                try
+                {
+                    using (SqlConnection conn = new SqlConnection(_connectionString))
+                    {
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM forum_post ORDER BY post_date desc", conn);
+
+                        var reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            var post = new ForumPost()
+                            {
+                                Username = Convert.ToString(reader["username"]),
+                                Message = Convert.ToString(reader["message"]),
+                                PostDate = Convert.ToDateTime(reader["post_date"]),
+                                Subject = Convert.ToString(reader["subject"])
+                            };
+
+                            posts.Add(post);
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    throw;
+                }
+
+                return posts;
+            
         }
 
         public bool SaveNewPost(ForumPost post)

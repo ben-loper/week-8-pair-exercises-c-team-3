@@ -21,8 +21,9 @@ namespace SSGeek.Web.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            ForumPost fp = new ForumPost();
-            return View(fp);
+            List<ForumPost> posts = _fpDAL.GetAllPosts();
+
+            return View(posts);
         }
 
 

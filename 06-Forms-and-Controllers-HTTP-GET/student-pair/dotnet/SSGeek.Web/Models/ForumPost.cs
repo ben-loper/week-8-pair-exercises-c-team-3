@@ -14,5 +14,6 @@ namespace SSGeek.Web.Models
 
         public string Message { get; set; }
 
+        public DateTime PostDate { get; set; }
     }
 }

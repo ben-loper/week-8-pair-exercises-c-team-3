@@ -5,16 +5,18 @@
 
 <h2>NewPost</h2>
 
-<form asp-controller="Forum" asp-action="NewPost" method="post">
+<section class="centeredPanel">
+    <form asp-controller="Forum" asp-action="NewPost" method="post">
 
-    <label asp-for="Username"></label>
-    <input asp-for="Username" />
+        <label asp-for="Username"></label>
+        <input asp-for="Username" />
 
-    <label asp-for="Subject"></label>
-    <input asp-for="Subject" />
+        <label asp-for="Subject"></label>
+        <input asp-for="Subject" />
 
-    <label asp-for="Message"></label>
-    <input asp-for="Message" />
+        <label asp-for="Message"></label>
+        <input asp-for="Message" />
 
-    <input type="submit" value="Sumbit!" />
-</form>
+        <input type="submit" value="Sumbit!" />
+    </form>
+</section>

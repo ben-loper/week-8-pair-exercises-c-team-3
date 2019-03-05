@@ -1,12 +1,16 @@
-﻿
+﻿@model List<ForumPost>
+
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Solar System Geek Forum</h2>
-
-
-
-<a asp-action="NewPost" asp-controller="Forum"><h4>Post a Message</h4></a>
-
-<p>Placeholder</p>
+<section class="centeredPanel">
+    <h2>Solar System Geek Forum</h2>
+    <a asp-action="NewPost" asp-controller="Forum">Post a Message</a>
+    <div class="post">
+        @foreach (ForumPost post in Model)
+        {
+            <p>@post.Message</p>
+        }
+    </div>
+</section>
