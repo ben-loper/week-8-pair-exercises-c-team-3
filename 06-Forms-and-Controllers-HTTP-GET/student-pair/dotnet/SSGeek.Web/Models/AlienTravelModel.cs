@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SSGeek.Web.Models
 {
-    public class AlientTravelModel
+    public class AlienTravelModel
     {
     }
 }
