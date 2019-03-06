@@ -31,6 +31,14 @@ namespace SSGeek.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddDistributedMemoryCache();
+            services.AddSession(options =>
+            {
+                // Sets session expiration to 20 minuates
+                options.IdleTimeout = TimeSpan.FromMinutes(20);
+                options.Cookie.HttpOnly = true;
+            });
+
             // CONFIGURE THE APPLICATION DEPENDENCIES
             services.AddScoped<ForumPostSqlDAL>(j => new ForumPostSqlDAL(@"Data Source=.\sqlexpress;Initial Catalog=SSGeek;Integrated Security=true;"));
             services.AddScoped<ProductSqlDAL>(j => new ProductSqlDAL(@"Data Source=.\sqlexpress;Initial Catalog=SSGeek;Integrated Security=true;"));
@@ -52,7 +60,7 @@ namespace SSGeek.Web
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
-            
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

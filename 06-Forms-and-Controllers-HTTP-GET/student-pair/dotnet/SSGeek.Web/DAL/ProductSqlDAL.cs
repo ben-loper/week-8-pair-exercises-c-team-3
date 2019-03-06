@@ -19,7 +19,36 @@ namespace SSGeek.Web.DAL
 
         public Product GetProduct(int id)
         {
-            throw new NotImplementedException();
+            Product product = new Product();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(_connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand($"SELECT * FROM products WHERE product_id = {id}" , conn);
+
+                    var reader = cmd.ExecuteReader();
+                    cmd.Parameters.AddWithValue("@id", id);
+                    while (reader.Read())
+                    {
+                        product = new Product()
+                        {
+                            ProductId = Convert.ToInt32(reader["product_id"]),
+                            Name = Convert.ToString(reader["name"]),
+                            Description = Convert.ToString(reader["description"]),
+                            Price = Convert.ToDecimal(reader["price"]),
+                            ImageName = Convert.ToString(reader["image_name"])
+                        };
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw;
+            }
+
+            return product;
         }
 
         public List<Product> GetProducts()

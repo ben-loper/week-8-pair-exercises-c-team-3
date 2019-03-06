@@ -1,0 +1,22 @@
+﻿@model ShoppingCart
+@{
+    ViewData["Title"] = "ViewCart";
+}
+
+
+<section class="centeredPanel">
+    <h2>View Cart</h2>
+
+    @* Loop Through the Items in the Cart and Display Them Here *@
+    @foreach (var item in Model.Items)
+    {
+        <div>@item.Product.Name</div>
+        <div>@item.Product.Price</div>
+        <div>@item.Quantity</div>
+        <div>@((item.Product.Price * item.Quantity).ToString("C"))</div>
+
+    }
+
+    <div colspan="4">Grand Total</div>
+    <div>@Model.GrandTotal.ToString("C")</div>
+</section>

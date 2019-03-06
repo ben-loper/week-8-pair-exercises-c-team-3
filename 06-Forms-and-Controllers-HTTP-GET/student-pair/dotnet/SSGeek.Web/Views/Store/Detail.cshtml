@@ -1,0 +1,24 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+<section class="centeredPanel">
+    <h2>Solar System Geek Gift Shop</h2>
+
+    <div class="details">
+        <img class="productImage" src="~/images/@Model.ImageName" />
+        <div class="productName"></div>
+        <div class="productPride"></div>
+        <div class="productDescription"></div>
+    </div>
+
+    <div class="quantityBar">
+        <p>Quanity to buy</p>
+        <form asp-action="AddToCart" asp-controller="Store" method="post">
+            <input type="number" name="quantity" value="@Model.ProductId"/>
+            <button>Add To Cart</button>
+        </form>
+    </div>
+</section>

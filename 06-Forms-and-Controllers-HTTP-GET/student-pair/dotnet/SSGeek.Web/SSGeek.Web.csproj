@@ -20,6 +20,9 @@
     <Content Update="Views\Calculators\AlienAgeResult.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Views\Store\ViewCart.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Store\Index.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
