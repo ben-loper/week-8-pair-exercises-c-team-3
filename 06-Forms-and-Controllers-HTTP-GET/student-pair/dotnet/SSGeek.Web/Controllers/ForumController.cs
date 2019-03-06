@@ -4,12 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using SessionControllerData;
 using SSGeek.Web.DAL;
 using SSGeek.Web.Models;
 
 namespace SSGeek.Web.Controllers
 {
-    public class ForumController : Controller
+    public class ForumController : SessionController
     {
         private ForumPostSqlDAL _fpDAL;
         public ForumController(ForumPostSqlDAL fpDAL)
@@ -39,6 +40,8 @@ namespace SSGeek.Web.Controllers
         public ActionResult NewPost(ForumPost fp)
         {
             _fpDAL.SaveNewPost(fp);
+
+            //SetTempData("",);
 
             return RedirectToAction("Index");
         }

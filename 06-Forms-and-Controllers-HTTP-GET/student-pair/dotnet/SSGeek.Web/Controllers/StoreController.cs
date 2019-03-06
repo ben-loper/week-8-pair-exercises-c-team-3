@@ -31,14 +31,14 @@ namespace SSGeek.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddToCart(int ProductId)
+        public IActionResult AddToCart(int ProductId, int quantity)
         {
             //1.  Get the Product associated with id
             Product product = _proDAL.GetProduct(ProductId);
 
             //2.  Add Product, qty 1 to our active shopping cart
             ShoppingCart cart = GetActiveShoppingCart();
-            cart.AddToCart(product, 1);
+            cart.AddToCart(product, quantity);
 
             //3. Save shopping cart
             SaveActiveShoppingCart(cart);
