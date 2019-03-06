@@ -41,7 +41,7 @@ namespace SSGeek.Web.Controllers
         {
             _fpDAL.SaveNewPost(fp);
 
-            //SetTempData("",);
+            TempData["Username"] = fp.Username;
 
             return RedirectToAction("Index");
         }
