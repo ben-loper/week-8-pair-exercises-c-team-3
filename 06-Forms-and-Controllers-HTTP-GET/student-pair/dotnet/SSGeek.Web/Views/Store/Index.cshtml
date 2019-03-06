@@ -1,0 +1,22 @@
+﻿@model List<Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*@section StyleSheet {
+    <link rel="stylesheet" type="text/css" href="~/css/ForumIndex.css" />
+}*@
+
+<section class="centeredPanel">
+    <h2>Solar System Geek Gift Shop</h2>
+    @*<a asp-action="NewPost" asp-controller="Forum">Post a Message</a>*@
+    <div class="product">
+        @foreach (Product product in Model)
+        {
+            <img src="~/images/@product.ImageName" class="productImage"/>
+            <p class="name">@product.Name</p>
+            <p class="price">@product.Price</p>
+        }
+    </div>
+</section>

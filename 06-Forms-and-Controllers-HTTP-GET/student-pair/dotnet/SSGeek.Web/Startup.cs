@@ -33,6 +33,7 @@ namespace SSGeek.Web
 
             // CONFIGURE THE APPLICATION DEPENDENCIES
             services.AddScoped<ForumPostSqlDAL>(j => new ForumPostSqlDAL(@"Data Source=.\sqlexpress;Initial Catalog=SSGeek;Integrated Security=true;"));
+            services.AddScoped<ProductSqlDAL>(j => new ProductSqlDAL(@"Data Source=.\sqlexpress;Initial Catalog=SSGeek;Integrated Security=true;"));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
