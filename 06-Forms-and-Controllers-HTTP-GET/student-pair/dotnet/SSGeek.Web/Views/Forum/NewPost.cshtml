@@ -10,12 +10,17 @@
 
         <label asp-for="Username"></label>
         <input asp-for="Username" />
+        <span class="validation" asp-validation-for="Username"></span>
 
         <label asp-for="Subject"></label>
         <input asp-for="Subject" />
+        <span class="validation" asp-validation-for="Subject"></span>
+
 
         <label asp-for="Message"></label>
         <input asp-for="Message" />
+        <span class="validation" asp-validation-for="Message"></span>
+
 
         <input type="submit" value="Sumbit!" />
     </form>

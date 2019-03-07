@@ -39,11 +39,21 @@ namespace SSGeek.Web.Controllers
         [HttpPost]
         public ActionResult NewPost(ForumPost fp)
         {
-            _fpDAL.SaveNewPost(fp);
+            ActionResult result = null;
 
-            //SetTempData("",);
+            if (!ModelState.IsValid)
+            {
+                result = View("NewPost");
+            }
+            else 
+            {
+                _fpDAL.SaveNewPost(fp);
 
-            return RedirectToAction("Index");
+                result = RedirectToAction("Index");
+            }
+
+
+            return result;
         }
     }
 }
