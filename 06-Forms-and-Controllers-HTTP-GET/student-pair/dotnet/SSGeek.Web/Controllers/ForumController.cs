@@ -41,6 +41,7 @@ namespace SSGeek.Web.Controllers
         {
             ActionResult result = null;
 
+
             if (!ModelState.IsValid)
             {
                 result = View("NewPost");
@@ -48,6 +49,9 @@ namespace SSGeek.Web.Controllers
             else 
             {
                 _fpDAL.SaveNewPost(fp);
+
+            TempData["Username"] = fp.Username;
+
 
                 result = RedirectToAction("Index");
             }

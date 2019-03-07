@@ -10,6 +10,9 @@
 
 <section class="centeredPanel">
     <h2>Solar System Geek Forum</h2>
+    @if(TempData["Username"] != null) { 
+    <h1>@TempData["Username"] this is the username</h1>
+    }
     <a asp-action="NewPost" asp-controller="Forum">Post a Message</a>
     <div class="post">
         @foreach (ForumPost post in Model)
