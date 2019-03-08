@@ -3,6 +3,9 @@
     ViewData["Title"] = "ViewCart";
 }
 
+@section StyleSheet {
+    <link rel="stylesheet" type="text/css" href="~/css/StoreViewCart.css" />
+}
 
 <section class="centeredPanel">
     <h2>View Cart</h2>
@@ -19,4 +22,7 @@
 
     <div colspan="4">Grand Total</div>
     <div>@Model.GrandTotal.ToString("C")</div>
+    <form asp-action="Checkout" asp-controller="Store" method="post">
+        <button>Check Out</button>
+    </form>
 </section>

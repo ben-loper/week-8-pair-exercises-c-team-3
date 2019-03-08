@@ -75,5 +75,11 @@ namespace SSGeek.Web.Models
             // Otherwise, deduct 1 from quantity
             item.Quantity -= 1;
         }
+
+
+        public void EmptyCart()
+        {
+            Items.Clear();
+        }
     }
 }

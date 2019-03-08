@@ -1,0 +1,47 @@
+﻿h2 {
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+a {
+    display:flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.post {
+    display: grid;
+    margin: 5px 10px;
+    padding: 0 0 5px 10px;
+}
+
+.post h4 {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.centeredPanel {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+section.centeredPanel div:nth-child(even) {
+    background-color: #d3d3d3;
+}
+
+section.centeredPanel div.success-message {
+    background-color: #5cb85c;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+section.centeredPanel div.success-message p {
+    color: white;
+    text-align: center;
+    margin-bottom: 0;
+}

@@ -1,0 +1,65 @@
+﻿h2 {
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+/*a {
+    display:flex;
+    text-align: center;
+    justify-content: center;
+}*/
+
+.products {
+    display: flex;
+    flex-direction: column;
+}
+
+.product {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+        "image text" ;
+    margin: 5px;
+}
+
+.productImage {
+    width: 100%;
+    grid-area: image;
+}
+
+.productText {
+    text-align: left;
+    font-weight: bold;
+    grid-area: text;
+}
+
+section.centeredPanel div.productName p {
+    font-size: 24px;
+}
+
+section.centeredPanel div.productPrice p {
+    color: deepskyblue;
+    font-size: 24px;
+}
+
+.centeredPanel {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+section.centeredPanel div.success-message {
+    background-color: #5cb85c;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+section.centeredPanel div.success-message p {
+    color: white;
+    text-align: center;
+    margin-bottom: 0;
+}

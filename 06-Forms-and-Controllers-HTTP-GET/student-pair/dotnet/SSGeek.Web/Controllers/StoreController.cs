@@ -53,6 +53,19 @@ namespace SSGeek.Web.Controllers
             return View(cart);
         }
 
+        [HttpPost]
+        public ActionResult Checkout()
+        {
+            ShoppingCart cart = GetActiveShoppingCart();
+
+            CheckoutCart(cart);
+            SaveActiveShoppingCart(cart);
+
+            TempData["ThankYouMessage"] = "";
+
+            return RedirectToAction("Index");
+        }
+
         //Methods
         private ShoppingCart GetActiveShoppingCart()
         {
@@ -77,6 +90,11 @@ namespace SSGeek.Web.Controllers
         private void SaveActiveShoppingCart(ShoppingCart cart)
         {
             SetSessionData("ShoppingCart", cart);        // <-- saves the shopping cart into session
+        }
+
+        private void CheckoutCart(ShoppingCart cart)
+        {
+            cart.EmptyCart();
         }
     }
 }

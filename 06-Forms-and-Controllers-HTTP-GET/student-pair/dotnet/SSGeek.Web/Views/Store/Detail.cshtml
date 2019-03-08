@@ -3,6 +3,9 @@
     ViewData["Title"] = "Detail";
 }
 
+@section StyleSheet {
+    <link rel="stylesheet" type="text/css" href="~/css/StoreDetail.css" />
+}
 
 <section class="centeredPanel">
     <h2>Solar System Geek Gift Shop</h2>
@@ -17,8 +20,8 @@
     <div class="quantityBar">
         <p>Quanity to buy</p>
         <form asp-action="AddToCart" asp-controller="Store" method="post">
-            <input type="number" name="quantity"/>
-            <input type="hidden" name="ProductId" value="@Model.ProductId"/>
+            <input type="number" name="quantity" />
+            <input type="hidden" name="ProductId" value="@Model.ProductId" />
             <button>Add To Cart</button>
         </form>
     </div>

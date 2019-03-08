@@ -4,19 +4,30 @@
     ViewData["Title"] = "Index";
 }
 
-@*@section StyleSheet {
-    <link rel="stylesheet" type="text/css" href="~/css/ForumIndex.css" />
-}*@
+@section StyleSheet {
+    <link rel="stylesheet" type="text/css" href="~/css/StoreIndex.css" />
+}
 
 <section class="centeredPanel">
     <h2>Solar System Geek Gift Shop</h2>
 
-    <div class="product">
+    @if (TempData["ThankYouMessage"] != null)
+    {
+        <div class="success-message">
+            <p>Thank You for your purchase!</p>
+        </div>
+    }
+
+    <div class="products">
         @foreach (Product product in Model)
         {
-            <a asp-action="Detail" asp-controller="Store"asp-route-ProductId="@product.ProductId"><img src="~/images/@product.ImageName" class="productImage" /></a>
-            <p class="name">@product.Name</p>
-            <p class="price">@product.Price</p>
+            <div class="product">
+                <a asp-action="Detail" asp-controller="Store" asp-route-ProductId="@product.ProductId"><img src="~/images/@product.ImageName" class="productImage" /></a>
+                <div class="productText">
+                    <div class="productName"><p>@product.Name</p></div>
+                    <div class="productPrice"><p>@product.Price.ToString("C")</p></div>
+                </div>
+            </div>
         }
     </div>
 </section>
