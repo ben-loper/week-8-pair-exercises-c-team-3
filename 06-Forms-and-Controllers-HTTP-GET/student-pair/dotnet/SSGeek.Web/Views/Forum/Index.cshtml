@@ -8,18 +8,24 @@
     <link rel="stylesheet" type="text/css" href="~/css/ForumIndex.css" />
 }
 
-<section class="centeredPanel">
-    <h2>Solar System Geek Forum</h2>
-    @if(TempData["Username"] != null) { 
-    <h1>@TempData["Username"] this is the username</h1>
-    }
-    <a asp-action="NewPost" asp-controller="Forum">Post a Message</a>
-    <div class="post">
+    <section class="centeredPanel">
+        <h2>Solar System Geek Forum</h2>
+        @if (TempData["Username"] != null)
+        {
+            <div class="success-message">
+                <p>Far out, @(TempData["Username"])! Your message has been saved!</p>
+            </div>
+        }
+
+        <a asp-action="NewPost" asp-controller="Forum">Post a Message</a>
+
         @foreach (ForumPost post in Model)
         {
-            <p class="Subject">@post.Subject</p>
-            <p class="NameDate">by @post.Username on @post.PostDate.ToString("MM/dd/yyyy") at @post.PostDate.ToString("HH:mm:ss")</p>
-            <p class="Message">@post.Message</p>
+            <div class="post">
+                <h4 class="Subject">@post.Subject</h4>
+                <p class="NameDate">by @post.Username on @post.PostDate.ToString("MM/dd/yyyy") at @post.PostDate.ToString("HH:mm:ss")</p>
+                <p class="Message">@post.Message</p>
+            </div>
         }
-    </div>
-</section>
+
+    </section>

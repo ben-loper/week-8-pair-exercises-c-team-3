@@ -1,1 +1,19 @@
-﻿
+﻿.centeredPanel {
+    display: grid;
+    margin-bottom: 20px;
+}
+
+form input[type="text"] , form textarea
+{
+    margin-left: 50px;
+}
+
+form input[type="submit"] {
+    margin-left: 253px;
+}
+
+form textarea {
+    width: 300px;
+    height: 115px;
+    resize: none;
+}
