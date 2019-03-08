@@ -7,22 +7,38 @@
     <link rel="stylesheet" type="text/css" href="~/css/StoreViewCart.css" />
 }
 
-<section class="centeredPanel">
-    <h2>View Cart</h2>
+    <section class="centeredPanel">
+        <h2>View Cart</h2>
+        
+        <div class="head">
+            <h2></h2>
+            <h2>Name</h2>
+            <h2>Price</h2>
+            <h2>Qty.</h2>
+            <h2>Total</h2>
+        </div>
 
-    @* Loop Through the Items in the Cart and Display Them Here *@
-    @foreach (var item in Model.Items)
-    {
-        <div>@item.Product.Name</div>
-        <div>@item.Product.Price</div>
-        <div>@item.Quantity</div>
-        <div>@((item.Product.Price * item.Quantity).ToString("C"))</div>
+        @* Loop Through the Items in the Cart and Display Them Here *@
+        <div class="products">
+            @foreach (var item in Model.Items)
+            {
+                <div class="product">
 
-    }
-
-    <div colspan="4">Grand Total</div>
-    <div>@Model.GrandTotal.ToString("C")</div>
-    <form asp-action="Checkout" asp-controller="Store" method="post">
-        <button>Check Out</button>
-    </form>
-</section>
+                    <img src="~/images/@item.Product.ImageName" class="productImage">
+                    <div class="productName">@item.Product.Name</div>
+                    <div class="productPrice">@item.Product.Price</div>
+                    <div class="productQuantity">@item.Quantity</div>
+                    <div class="productTotal">@((item.Product.Price * item.Quantity).ToString("C"))</div>
+                </div>
+            }
+        </div>
+        <div class="grandTotal">
+            
+            <div class="grandTotalPrice"><label for="GrandTotal">Grand Total</label> @Model.GrandTotal.ToString("C")</div>
+            <div class="checkOut">
+                <form asp-action="Checkout" asp-controller="Store" method="post">
+                    <button>Check Out</button>
+                </form>
+            </div>
+        </div>
+    </section>
