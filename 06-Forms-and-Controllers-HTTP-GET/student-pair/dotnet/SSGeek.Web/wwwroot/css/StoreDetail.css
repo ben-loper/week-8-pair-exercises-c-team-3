@@ -26,22 +26,37 @@ a {
     padding-bottom: 20px;
 }
 
-section.centeredPanel div:nth-child(even) {
-    background-color: #d3d3d3;
+.product-details {
+    display: grid;
+    grid-template-columns: 25% 50%;
 }
 
-section.centeredPanel div.success-message {
-    background-color: #5cb85c;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-radius: 5px;
-    margin-bottom: 10px;
+.productImage {
+    width: 300px;
 }
 
-section.centeredPanel div.success-message p {
-    color: white;
-    text-align: center;
-    margin-bottom: 0;
+
+form button {
+    margin-left: 20px;
+}
+
+.product-description {
+    margin-bottom: 20px;
+}
+
+.product-info label {
+    margin-right: 50px;
+}
+
+.product-info form input[type="number"]{
+    width: 250px;
+}
+
+#product-title {
+    font-weight: bold;
+    color: black;
+}
+
+#product-price {
+    color: deepskyblue;
 }

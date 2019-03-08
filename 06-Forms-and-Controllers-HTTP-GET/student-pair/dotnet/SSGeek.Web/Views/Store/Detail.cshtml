@@ -9,20 +9,23 @@
 
 <section class="centeredPanel">
     <h2>Solar System Geek Gift Shop</h2>
+   
+    <div class="product-details">
 
-    <div class="details">
-        <img class="productImage" src="~/images/@Model.ImageName" />
-        <div class="productName"></div>
-        <div class="productPride"></div>
-        <div class="productDescription"></div>
-    </div>
+        <div class="product-photo">
+            <img class="productImage" src="~/images/@Model.ImageName" />
+        </div>
 
-    <div class="quantityBar">
-        <p>Quanity to buy</p>
-        <form asp-action="AddToCart" asp-controller="Store" method="post">
-            <input type="number" name="quantity" />
-            <input type="hidden" name="ProductId" value="@Model.ProductId" />
-            <button>Add To Cart</button>
-        </form>
+        <div class="product-info">
+            <h4 id="product-title">@Model.Name</h4>
+            <h4 id="product-price">@Model.Price.ToString("C")</h4>
+            <p class="product-description">@Model.Description</p>
+            <form asp-action="AddToCart" asp-controller="Store" method="post">
+                <label for="quantity">Quantity to buy</label>
+                <input type="number" name="quantity" />
+                <input type="hidden" name="ProductId" value="@Model.ProductId" />
+                <button class="btn btn-primary">Add To Cart</button>
+            </form>
+        </div>
     </div>
 </section>
