@@ -1,0 +1,19 @@
+﻿@model AlienTravelResultViewModel
+
+@{
+    ViewData["Title"] = "AlienTravelResult";
+}
+
+@section StyleSheet {
+    <link rel="stylesheet" type="text/css" href="~/css/AlienTravelResult.css" />
+}
+
+
+    <section id="calculatorResult" class="centeredPanel">
+        <div class="results-sect">
+            <img src="~/images/@(Model.SelectedPlanet.ToLower()).jpg" />
+            <p>Traveling by @Model.SelectedModeOfTransportation.ToLower() you will reach @Model.SelectedPlanet in @Math.Round(Model.NumOfYearsToPlanet, 2) years. You will be @Math.Round(Model.AgeOncePlanetReached, 2)</p>
+
+        </div>
+
+    </section>

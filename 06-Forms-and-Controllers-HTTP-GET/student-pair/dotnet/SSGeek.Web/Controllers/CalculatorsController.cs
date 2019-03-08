@@ -48,7 +48,11 @@ namespace SSGeek.Web.Controllers
         // GET: calcualtors/alienweightresult?planet=xyz&weight=123
         public ActionResult AlienTravelResult(AlienTravelModel model)
         {
-            return View(model);
+            AlienTravelResultViewModel alienTravelResult = new AlienTravelResultViewModel(model.SelectedPlanet, model.SelectedModeOfTransportation, model.EarthAge);
+            
+            alienTravelResult.EarthAge = model.EarthAge;
+
+            return View(alienTravelResult);
         }
     }
 }

@@ -20,7 +20,6 @@ namespace SSGeek.Web.Models
             new SelectListItem() { Text = "Mercury", Value = "Mercury" },
             new SelectListItem() { Text = "Venus", Value = "Venus" },
             new SelectListItem() { Text = "Earth", Value = "Earth" },
-            new SelectListItem() { Text = "Moon", Value = "Moon" },
             new SelectListItem() { Text = "Mars", Value = "Mars" },
             new SelectListItem() { Text = "Jupiter", Value = "Jupiter" },
             new SelectListItem() { Text = "Saturn", Value = "Saturn" },
